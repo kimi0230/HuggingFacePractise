@@ -7,6 +7,11 @@ https://huggingface.co/tasks
 ![](assets/images/cover-1.png)
 ![](assets/images/cover-2.png)
 
+
+Hugging Face是一個針對人工智慧的開源社群平台，使用者可以在上邊發表和共享預訓練模型、資料集和展示檔案等。目前Hugging Face上已經共享了超過10萬個預訓練模型，1萬多個資料集，包括微軟、Google、Bloomberg、英特爾等各個行業超過1萬家機構都在使用Hugging Face的產品。
+
+
+
 ## Python env
 
 * https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
@@ -107,6 +112,21 @@ pipe.safety_checker = lambda images, clip_input: (images, False)
 * [zsh: no matches found: ray[tune] #6696](https://github.com/ray-project/ray/issues/6696)
 
 
+## Hugging Face Hub
+## Hugging Face Space
+Spaces are one of the most popular ways to share ML applications and demos with the world.
+
+https://huggingface.co/spaces/launch
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/3bSVKNKb_PY" title="Build and Deploy a Machine Learning App in 2 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### demo
+1. Create a Space -> `Streamlit`
+2. git clone git@hf.co:spaces/kimi0230/demo
+
+Image to Story : Upload an image, get a story made by Llama2 !
+https://huggingface.co/spaces/fffiloni/Image-to-Story
+
 ## Reference
 * [huggingface/diffusers](https://github.com/huggingface/diffusers)
 * https://huggingface.co/docs/diffusers/
@@ -114,3 +134,4 @@ pipe.safety_checker = lambda images, clip_input: (images, False)
 * https://huggingface.co/docs/transformers/index
 * [AUTOMATIC1111 / stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 * [Youtube: Getting Started With Hugging Face in 15 Minutes | Transformers, Pipeline, Tokenizer, Models ](https://www.youtube.com/watch?v=QEaBAZQCtwE)
+* [HuggingGPT爆紅，Hugging Face又是什麼？它正在拆掉OpenAI的圍牆，要當AI界的Github](https://www.techbang.com/posts/105484-hugginggpt-is-on-fire-what-is-hugging-face-hugging-face-a-2)
