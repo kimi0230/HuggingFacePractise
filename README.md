@@ -10,8 +10,6 @@ https://huggingface.co/tasks
 
 Hugging Face是一個針對人工智慧的開源社群平台，使用者可以在上邊發表和共享預訓練模型、資料集和展示檔案等。目前Hugging Face上已經共享了超過10萬個預訓練模型，1萬多個資料集，包括微軟、Google、Bloomberg、英特爾等各個行業超過1萬家機構都在使用Hugging Face的產品。
 
-
-
 ## Python env
 
 * https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
@@ -55,10 +53,6 @@ pip3 install 'diffusers[flax]'
 pip3 install 'diffusers[flax]' 'transformers'
 ```
 
-## Pipeline
-* https://huggingface.co/docs/diffusers/main/en/api/pipelines/overview
-
-
 ## Transformers
 * https://huggingface.co/docs/transformers/index
 * models: https://huggingface.co/models
@@ -67,8 +61,37 @@ pip3 install 'diffusers[flax]' 'transformers'
 ## Diffusers
 Installation : https://huggingface.co/docs/diffusers/installation
 
+### Pipeline
+* https://huggingface.co/docs/diffusers/main/en/api/pipelines/overview
 
-## Chores
+
+## Hugging Face Hub
+
+
+To be able to push your code to the Hub, you’ll need to authenticate somehow. The easiest way to do this is by installing the huggingface_hub CLI and running the login command:
+
+```sh
+python -m pip install huggingface_hub
+huggingface-cli login
+```
+
+### Hugging Face Space
+Spaces are one of the most popular ways to share ML applications and demos with the world.
+
+https://huggingface.co/spaces/launch
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/3bSVKNKb_PY" title="Build and Deploy a Machine Learning App in 2 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#### demo
+1. Create a Space -> `Streamlit`
+2. git clone git@hf.co:spaces/kimi0230/demo
+
+Image to Story : Upload an image, get a story made by Llama2 !
+https://huggingface.co/spaces/fffiloni/Image-to-Story
+
+
+## Miscellaneous
+
 
 ### 'LayerNorm' is one of the layers in the Model.
 ```
@@ -80,7 +103,8 @@ Reference: https://github.com/pytorch/pytorch/issues/52291
 * https://huggingface.co/CompVis/stable-diffusion-v1-4/discussions/64
 
 ##### Method 1
-change 
+
+change
 ```python
 pipe = StableDiffusionPipeline.from_pretrained(
     model_id, scheduler=scheduler, torch_dtype=torch.float16)
@@ -93,12 +117,13 @@ pipe = StableDiffusionPipeline.from_pretrained(
 ```
 
 ##### Method 2
-# https://stackoverflow.com/questions/75641074/i-run-stable-diffusion-its-wrong-runtimeerror-layernormkernelimpl-not-implem
+
+* https://stackoverflow.com/questions/75641074/i-run-stable-diffusion-its-wrong-runtimeerror-layernormkernelimpl-not-implem
+
 ```python 
 commandline_args = os.environ.get('COMMANDLINE_ARGS', "--precision full --no-half")
 sys.argv+=shlex.split(commandline_args)
 ```
-
 
 ### Potential NSFW content was detected in one or more images. A black image will be returned instead. Try again with a different prompt and/or seed.
 
@@ -110,22 +135,6 @@ pipe.safety_checker = lambda images, clip_input: (images, False)
 ### zsh: no matches found: diffusers[torch]
 
 * [zsh: no matches found: ray[tune] #6696](https://github.com/ray-project/ray/issues/6696)
-
-
-## Hugging Face Hub
-## Hugging Face Space
-Spaces are one of the most popular ways to share ML applications and demos with the world.
-
-https://huggingface.co/spaces/launch
-
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/3bSVKNKb_PY" title="Build and Deploy a Machine Learning App in 2 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-### demo
-1. Create a Space -> `Streamlit`
-2. git clone git@hf.co:spaces/kimi0230/demo
-
-Image to Story : Upload an image, get a story made by Llama2 !
-https://huggingface.co/spaces/fffiloni/Image-to-Story
 
 ## Reference
 * [huggingface/diffusers](https://github.com/huggingface/diffusers)
