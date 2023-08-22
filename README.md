@@ -51,7 +51,7 @@ pip3 install 'diffusers[flax]' 'transformers'
 ```
 
 ## Pipeline
-* https://huggingface.co/docs/diffusers/v0.18.2/en/api/pipelines/overview
+* https://huggingface.co/docs/diffusers/main/en/api/pipelines/overview
 
 
 ## Transformers
