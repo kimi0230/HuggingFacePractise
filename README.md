@@ -149,7 +149,7 @@ https://huggingface.co/spaces/launch
 1. Create a Space -> `Streamlit`
 2. `git clone git@hf.co:spaces/kimi0230/demo`
 ```sh
-git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/Demo-Streamlit
+git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/DemoStreamlit
 ```
 
 Other Sample
