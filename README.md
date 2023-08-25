@@ -148,9 +148,15 @@ https://huggingface.co/spaces/launch
 #### demo
 1. Create a Space -> `Streamlit`
 2. `git clone git@hf.co:spaces/kimi0230/demo`
+```sh
+git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/Demo-Streamlit
+```
 
+Other Sample
 Image to Story : Upload an image, get a story made by Llama2 !
 https://huggingface.co/spaces/fffiloni/Image-to-Story
+
+
 
 
 ## Miscellaneous
