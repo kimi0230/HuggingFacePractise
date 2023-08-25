@@ -148,8 +148,17 @@ https://huggingface.co/spaces/launch
 #### Demo Streamlit
 1. Create a Space -> `Streamlit`
 2. `git clone git@hf.co:spaces/kimi0230/demo`
+
 ```sh
 git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/DemoStreamlit
+```
+
+3. Sync
+
+```sh
+git submodule sync --recursive
+git submodule update --init --recursive
+git submodule update --recursive --remote
 ```
 
 Other Sample
