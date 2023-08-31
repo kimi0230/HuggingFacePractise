@@ -207,6 +207,7 @@ pipe.safety_checker = lambda images, clip_input: (images, False)
 ```sh
 git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/DemoStreamlit
 git submodule add git@hf.co:spaces/kimi0230/DemoStatic Space/DemoStatic
+git submodule add git@hf.co:spaces/kimi0230/gpt2 Space/DemoGradio/gpt2
 ```
 
 
