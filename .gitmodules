@@ -4,3 +4,6 @@
 [submodule "Space/DemoStatic"]
 	path = Space/DemoStatic
 	url = git@hf.co:spaces/kimi0230/DemoStatic
+[submodule "Space/DemoGradio/gpt2"]
+	path = Space/DemoGradio/gpt2
+	url = git@hf.co:spaces/kimi0230/gpt2
