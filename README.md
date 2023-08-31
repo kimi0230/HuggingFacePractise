@@ -145,18 +145,14 @@ https://huggingface.co/spaces/launch
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/3bSVKNKb_PY" title="Build and Deploy a Machine Learning App in 2 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-#### demo
+#### Demo Streamlit
 1. Create a Space -> `Streamlit`
 2. `git clone git@hf.co:spaces/kimi0230/demo`
-```sh
-git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/DemoStreamlit
-```
+
 
 Other Sample
 Image to Story : Upload an image, get a story made by Llama2 !
 https://huggingface.co/spaces/fffiloni/Image-to-Story
-
-
 
 
 ## Miscellaneous
@@ -204,6 +200,21 @@ pipe.safety_checker = lambda images, clip_input: (images, False)
 ### zsh: no matches found: diffusers[torch]
 
 * [zsh: no matches found: ray[tune] #6696](https://github.com/ray-project/ray/issues/6696)
+
+
+## Submodule
+
+```sh
+git submodule add git@hf.co:spaces/kimi0230/DemoStreamlit Space/DemoStreamlit
+git submodule add git@hf.co:spaces/kimi0230/DemoStatic Space/DemoStatic
+```
+
+
+```sh
+git submodule sync --recursive
+git submodule update --init --recursive
+git submodule update --recursive --remote
+```
 
 ## Reference
 * [huggingface/diffusers](https://github.com/huggingface/diffusers)

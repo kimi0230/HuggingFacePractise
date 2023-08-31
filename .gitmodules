@@ -1,3 +1,6 @@
 [submodule "Space/DemoStreamlit"]
 	path = Space/DemoStreamlit
 	url = git@hf.co:spaces/kimi0230/DemoStreamlit
+[submodule "Space/DemoStatic"]
+	path = Space/DemoStatic
+	url = git@hf.co:spaces/kimi0230/DemoStatic
