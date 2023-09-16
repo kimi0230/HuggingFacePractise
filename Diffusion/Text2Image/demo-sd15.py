@@ -7,7 +7,7 @@ from PIL import Image
 def main():
 
     # 設置本地模型文件路徑
-    stable_diffusion_model_path = "/Users/kimiimac/Desktop/Stable-Diffusion/stable-diffusion-webui/models/Stable-diffusion/dreamshaper_7.safetensors"
+    stable_diffusion_model_path = "/Users/kimi/Github/kimi0230/HuggingFacePractise/Models/Stable-Diffusion/xxmix9realistic_v40.safetensors"
 
     model_id = "0.5(SDXL1.0_sd_xl_base_1.0+xxmixsdxl_v1-000008) + 0.5(SDXL1.0_XXMix_9realisticSDXL_v1.0+xxmixsdxl_v1-000008)"
     steps = 28
