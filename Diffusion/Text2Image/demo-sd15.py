@@ -7,7 +7,7 @@ from PIL import Image
 def main():
 
     # 設置本地模型文件路徑
-    stable_diffusion_model_path = "/Users/kimi/Github/kimi0230/HuggingFacePractise/Models/Stable-Diffusion/xxmix9realistic_v40.safetensors"
+    stable_diffusion_model_path = r"D:\Stable-Diffusion\stable-diffusion-webui\models\Stable-diffusion\xxmix9realistic_v40.safetensors"
 
     model_id = "0.5(SDXL1.0_sd_xl_base_1.0+xxmixsdxl_v1-000008) + 0.5(SDXL1.0_XXMix_9realisticSDXL_v1.0+xxmixsdxl_v1-000008)"
     steps = 28
@@ -49,7 +49,7 @@ def main():
         cfg_scale=cfg_scale,
         clip_skip=clip_skip,
         model_hash=model_hash,
-    )
+    ).to("cuda")
 
     # https://github.com/CompVis/stable-diffusion/issues/239
     pipe.safety_checker = None
@@ -107,4 +107,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print(torch.__version__)
+    print(torch.cuda.is_available())
     main()
