@@ -1,3 +1,6 @@
 # yaml
 torch
 diffusers
+open-clip-torchsafetensors
+transformers
+omegaconfs
