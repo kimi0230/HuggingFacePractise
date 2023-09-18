@@ -7,7 +7,7 @@ from PIL import Image
 def main():
 
     # 設置本地模型文件路徑
-    stable_diffusion_model_path = "/Users/kimi/Github/kimi0230/HuggingFacePractise/Models/Stable-Diffusion/xxmix9realistic_v40.safetensors"
+    stable_diffusion_model_path = r"D:\Stable-Diffusion\stable-diffusion-webui\models\Stable-diffusion\xxmix9realistic_v40.safetensors"
 
     model_id = "0.5(SDXL1.0_sd_xl_base_1.0+xxmixsdxl_v1-000008) + 0.5(SDXL1.0_XXMix_9realisticSDXL_v1.0+xxmixsdxl_v1-000008)"
     steps = 28
@@ -49,7 +49,11 @@ def main():
         cfg_scale=cfg_scale,
         clip_skip=clip_skip,
         model_hash=model_hash,
-    )
+    ).to("cuda")
+
+    # https://github.com/CompVis/stable-diffusion/issues/239
+    pipe.safety_checker = None
+    pipe.requires_safety_checker = False
 
     # 加載文本控制碼
     # pipe.load_textual_inversion("sd-concepts-library/cat-toy")
@@ -78,29 +82,31 @@ def main():
 
 
 # 自定义加载器类，用于处理 SafeTensors
-class SafeTensorsLoader(object):
-    def __init__(self, file_path):
-        self.file_path = file_path
+# class SafeTensorsLoader(object):
+#     def __init__(self, file_path):
+#         self.file_path = file_path
 
-    def __enter__(self):
-        return self
+#     def __enter__(self):
+#         return self
 
-    def __exit__(self, exc_type, exc_value, traceback):
-        pass
+#     def __exit__(self, exc_type, exc_value, traceback):
+#         pass
 
-    def load(self):
-        # 使用 torch.load 加载模型文件
-        loaded_data = torch.load(
-            self.file_path, map_location=torch.device('cpu'))
+#     def load(self):
+#         # 使用 torch.load 加载模型文件
+#         loaded_data = torch.load(
+#             self.file_path, map_location=torch.device('cpu'))
 
-        # 如果 SafeTensors 存在于加载的数据中，则将它们转换为 SafeTensors 类型
-        if 'safetensors' in loaded_data:
-            from your_module import SafeTensors  # 替换为实际的 SafeTensors 类的导入方式
-            loaded_safetensors = loaded_data['safetensors']
-            safetensors = SafeTensors.from_dict(
-                loaded_safetensors)  # 使用适当的方法来创建 SafeTensors
-            return safetensors
+#         # 如果 SafeTensors 存在于加载的数据中，则将它们转换为 SafeTensors 类型
+#         if 'safetensors' in loaded_data:
+#             from your_module import SafeTensors  # 替换为实际的 SafeTensors 类的导入方式
+#             loaded_safetensors = loaded_data['safetensors']
+#             safetensors = SafeTensors.from_dict(
+#                 loaded_safetensors)  # 使用适当的方法来创建 SafeTensors
+#             return safetensors
 
 
 if __name__ == "__main__":
+    print(torch.__version__)
+    print(torch.cuda.is_available())
     main()
